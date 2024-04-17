@@ -1,0 +1,49 @@
+q_index;q_text
+X1;Hverjar eru helstu áskoranir í umhverfinu sem menningarstarfsemi á Íslandi almennt stendur frammi fyrir á næstu 10 árum
+X2;Hver eru helstu tækifærin fyrir menningarstarfsemi á Íslandi almennt á næstu árum
+X3;Hverjar eru helstu áskoranir í umhverfinu sem þín skipulagsheild stendur frammi fyrir á næstu 10 árum
+X4;Hver eru helstu tækifærin fyrir þína skipulagsheild á næstu árum
+X5;Hversu sammála eða ósammála ertu eftirfarandi fullyrðingum um áhrif COVID 19 faraldursins á reksturinn í þinni skipulagsheild
+X6;Hvaða þættir valda þér mestri óvissu í rekstri þinnar skipulagsheildar
+X7;Hversu sammála eða ósammála ertu eftirfarandi fullyrðingum um þína skipulagsheild og starfsumhverfi
+X8;Hversu mikla eða litla telur þú eftirfarandi ókosti vera við fámenni þar sem menningargeirinn er annars vegar
+X9;Hversu mikla eða litla telur þú eftirfarandi kosti vera við fámenni þegar menningargeirinn er annars vegar
+X10;Hversu sammála eða ósammála ertu eftirfarandi fullyrðingum um stjórnun í menningargeiranum
+X10a;Er eitthvað sem þú vilt bæta við svör þín í spurningum 1 10 hér að ofan
+X11;Hversu sammála eða ósammála ertu eftirfarandi fullyrðingum um vægi stjórnunarmenntunar hjá stjórnendum í menningargeiranum
+X12;Hversu líklegt eða ólíklegt telur þú að þú munir sækja eftirfarandi menntun á næstu 12 24 mánuðum
+X12a;Er eitthvað sem þú vilt bæta við svör þín í spurningum 11 12 hér að ofan
+X13;Hversu sammála eða ósammála ertu eftirfarandi fullyrðingum um áherslur í loftslags og umhverfismálum og áhrif þeirra á ákvarðanatöku í þinni skipulagsheild
+X14;Hversu sammála eða ósammála ertu eftirfarandi fullyrðingum um áherslur í jafnréttismálum og áhrif þeirra á ákvarðanatöku í þinni skipulagsheild
+X15;Hversu sammála eða ósammála ertu eftirfarandi fullyrðingum um málefni margbreytileika diversity og áhrif þeirra á ákvarðanatöku í þinni skipulagsheild
+X16;Hversu sammála eða ósammála ertu eftirfarandi fullyrðingum um áherslur á inngildingu jaðarsettra hópa og áhrif þeirra á ákvarðanatöku í þinni skipulagsheild
+X17;Hversu sammála eða ósammála ertu eftirfarandi fullyrðingum um áherslur heimsmarkmiða um sjálfbæra þróun og áhrif þeirra á ákvarðanatöku í þinni skipulagsheild
+X18;Hversu sammála eða ósammála ertu eftirfarandi fullyrðingum um ástæður þess að mun fleiri konur eru stjórnendur í menningargeiranum heldur en í viðskiptageiranum
+X18a;Er eitthvað sem þú vilt bæta við svör þín í spurningum 13 17 hér að ofan
+X19;Hversu lengi hefurðu starfað á núverandi stað
+X20;Hafðir þú áður unnið störf tengd menningarstjórnun
+X21;Hvert er starfshlutfall þitt á núverandi vinnustað
+X22;Hvað starfa margir fastráðnir í fullu starfi á þínum vinnustað
+X23;Hvað starfa margir fastráðnir í hlutastarfi á þínum vinnustað
+X24;Hve margir koma reglulega að starfseminni sem verktakar lausráðnir
+X25;Hefurðu forráð yfir öðru fastráðnu starfsfólki
+X26;Hvað af eftirfarandi lýsir best skipulagsheildinni sem þú starfar hjá
+X27;Er starfsemin styrkt af ríki
+X28;Er starfsemin styrkt af sveitarfélagi/sveitarfélögum
+X29;Er starfsemin styrkt af einkaaðila
+X30;Hversu stór hluti af heildarrekstrarfé eru aðgangseyrir vörusala
+X31;Fyrir hverja er starfsemin hugsuð
+X32;Reiðir starfsemin sig á sérhæfða eða dýra innviði t d húsnæði eða tækni
+X33;Hvaða starfstitill lýsir best starfi þínu
+X34;Skilgreinir þú starf þitt sem menningarstjórnun
+X35;Hversu mikið eða lítið eiga eftirfarandi skilgreiningar við hugtakið menningarstjórnandi
+X36;Aldur
+X37;Kyn
+X38;Hvað lýsir þjóðerni þínu best
+X39;Hver er formleg menntun þín
+X39a;Ef við á hvaða grunnháskólagráðu ertu með BA diplóma eða sambærilegt
+X39b;Ef við á hvaða framhaldsháskólagráðu ertu með meistaranám eða sambærilegt
+X40;Hefurðu lært stjórnun
+X41;Ef þú hefur lært stjórnun hvers konar menntun er um að ræða og hvar fór hún fram
+X42;Ef þú hefur ekki lært stjórnun stefnirðu á nám í stjórnun
+X43;Er eitthvað sem þú vilt koma á framfæri að lokum
