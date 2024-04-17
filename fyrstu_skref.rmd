@@ -1,0 +1,60 @@
+---
+title: "fyrstu_skref"
+author: "Kári Joensen"
+date: "2024-04-17"
+output: pdf_document
+---
+
+
+```{r, echo=FALSE}
+options(knitr.table.format ="latex")
+suppressMessages(
+library(tidyverse)
+)
+library(knitr)
+
+```
+
+```{r, echo=FALSE}
+dat<- read.csv2(file = "results-survey145886.csv", sep = ",")
+q_item<-read.csv2(file = "q_item.csv", fileEncoding = "ISO-8859-1")
+q_text<-read.csv2(file = "q_text.csv", fileEncoding = "ISO-8859-1")
+
+# Dálkaheiti fyrir fyrstu 10 spurningarnar
+colnames(dat)[7:94]<-t(q_item[7:94,4])
+
+lvl_askorun<-c("Mjög lítil / engin áskorun","Frekar lítil áskorun","Hvorki mikil né lítil áskorun","Frekar mikil áskorun","Mjög mikil áskorun","Veit ekki / vil ekki svara")
+lvl_taekifaeri<-c("")
+lvl_sammala<-c("")
+lvl_okostur<-c("")
+lvl_kostur<-c("")
+
+
+
+for (i in 8:22) {
+dat[,i]<-factor(dat[,i], levels = lvl_askorun)
+}
+
+
+```
+
+
+```{r, echo=FALSE}
+plot_dat<-as.data.frame(dat[,8:22])
+
+for (i in 8:22) {
+my_plot<- ggplot(data = data.frame(q=dat[,i]), aes(x=q))+ 
+    geom_bar(aes(y = (..count..)/sum(..count..)))
+
+print(my_plot) 
+}
+
+
+# for (j in 1:15) {
+# ggplot(data = data.frame(q=dat[,j]))
+# }
+
+
+
+remove(plot_dat)
+```
