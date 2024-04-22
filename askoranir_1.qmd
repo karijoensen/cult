@@ -73,7 +73,6 @@ for(i in 7:22){
   print(kable(plot_dat[-3]) %>% column_spec(2:3, bold = TRUE) ) 
   cat("\n")
 }
-# kable(plot_dat, "pipe")
 remove(plot_dat, my_plot)
   
 ```
