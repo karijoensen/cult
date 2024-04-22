@@ -1,17 +1,21 @@
 ---
-title: "fyrstu_skref"
+title: "Starfsumhverfi stjórnenda í menningargeiranum á Íslandi"
 author: "Kári Joensen"
 date: "2024-04-17"
 output: pdf_document
 ---
 
-
 ```{r, echo=FALSE}
 options(knitr.table.format ="latex")
 suppressMessages(
-library(tidyverse)
+library(tidyverse))
+suppressWarnings(
+library(wesanderson)
 )
 library(knitr)
+suppressMessages(
+suppressWarnings(library(kableExtra))
+)
 
 ```
 
@@ -21,17 +25,19 @@ q_item<-read.csv2(file = "q_item.csv", fileEncoding = "ISO-8859-1")
 q_text<-read.csv2(file = "q_text.csv", fileEncoding = "ISO-8859-1")
 
 # Dálkaheiti fyrir fyrstu 10 spurningarnar
-colnames(dat)[7:94]<-t(q_item[7:94,4])
+colnames(dat)[]<-t(q_item[,6
+                              ])
 
-lvl_askorun<-c("Mjög lítil / engin áskorun","Frekar lítil áskorun","Hvorki mikil né lítil áskorun","Frekar mikil áskorun","Mjög mikil áskorun","Veit ekki / vil ekki svara")
-lvl_taekifaeri<-c("")
-lvl_sammala<-c("")
-lvl_okostur<-c("")
-lvl_kostur<-c("")
+dat<-dat %>% filter(lastPage==4)
+
+lvl_askorun<-c("Mjög lítil / engin áskorun","Frekar lítil áskorun","Hvorki mikil né lítil áskorun","Frekar mikil áskorun","Mjög mikil áskorun","Veit ekki / vil ekki svara","")
+lvl_taekifaeri<-c("Mjög lítil / engin tækifæri","Frekar lítil tækifæri","Hvorki mikil né lítil tækifæri","Frekar mikil tækifæri","Mjög mikil tækifæri","Veit ekki / vil ekki svara","")
+lvl_sammala<-c("Mjög ósammála","Frekar ósammála","Hvorki sammála né ósammála","Frekar sammála","Mjög sammála","Veit ekki / vil ekki svara","")
+lvl_okostur<-c("Mjög lítill / enginn ókostur","Frekar lítill ókostur","Hvorki mikill né lítill ókostur","Frekar mikill ókostur","Mjög mikill ókostur","Veit ekki / vil ekki svara","")
+lvl_kostur<-c("Mjög lítill / enginn kostur","Frekar lítill kostur","Hvorki mikill né lítill kostur","Frekar mikill kostur","Mjög mikill kostur","Veit ekki, vil ekki svara","")
 
 
-
-for (i in 8:22) {
+for (i in 7:22) {
 dat[,i]<-factor(dat[,i], levels = lvl_askorun)
 }
 
@@ -39,22 +45,30 @@ dat[,i]<-factor(dat[,i], levels = lvl_askorun)
 ```
 
 
-```{r, echo=FALSE}
-plot_dat<-as.data.frame(dat[,8:22])
 
-for (i in 8:22) {
-my_plot<- ggplot(data = data.frame(q=dat[,i]), aes(x=q))+ 
-    geom_bar(aes(y = (..count..)/sum(..count..)))
+```{r, echo=FALSE, eval=FALSE}
+# plot_dat<-as.data.frame(dat[,7:22])
+# pal <- wes_palette("Zissou1", 7, type = "continuous")
+# scale_fill_manual(values =pal)
 
-print(my_plot) 
+for(i in 7:22){
+  myplot<-ggplot(
+    data = data.frame(q=dat[,i]),
+    aes(x=q, y=after_stat(count/sum(count)), fill=q)
+  )+
+    geom_bar()+
+    theme_classic()+
+    theme(legend.position = "none")+
+    scale_x_discrete(labels=function(x) str_wrap(x,width = 15))+
+    scale_fill_brewer(palette = "YlGn")
+  print(myplot)
+
+  remove(myplot)
 }
+  
 
-
-# for (j in 1:15) {
-# ggplot(data = data.frame(q=dat[,j]))
-# }
-
-
-
-remove(plot_dat)
+# remove(plot_dat)
 ```
+
+
+

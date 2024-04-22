@@ -62,7 +62,7 @@ for(i in 7:22){
     aes(x=q, y=freq, fill=q)
   )+
     geom_bar(stat = "identity")+
-    labs(title = str_wrap(q_item[i,4], width = 120) ,subtitle = "Áskoranir")+
+    labs(title = str_wrap(q_item[i,4], width = 120) ,subtitle = "Áskoranir menningarstarfsemi")+
     theme_classic()+
     theme(legend.position = "none")+
     scale_x_discrete(labels=function(x) str_wrap(x,width = 15))+
