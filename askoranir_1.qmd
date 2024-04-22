@@ -1,0 +1,81 @@
+---
+title: "Starfsumhverfi stjórnenda í menningargeiranum á Íslandi"
+subtitle: "Áskoranir, tækifæri og áherslur"
+date: "`r Sys.Date()`"
+format: pdf
+author: "Kári Joensen"
+---
+
+```{r, echo=FALSE}
+suppressMessages(
+library(tidyverse))
+suppressWarnings(
+library(wesanderson)
+)
+library(knitr)
+suppressMessages(
+suppressWarnings(library(kableExtra))
+)
+```
+
+```{r, echo=FALSE}
+dat<- read.csv2(file = "results-survey145886.csv", sep = ",")
+q_item<-read.csv2(file = "q_item.csv", fileEncoding = "ISO-8859-1")
+q_text<-read.csv2(file = "q_text.csv", fileEncoding = "ISO-8859-1")
+
+# Dálkaheiti fyrir fyrstu 10 spurningarnar
+colnames(dat)[]<-t(q_item[,6
+                              ])
+
+dat<-dat %>% filter(lastPage==4)
+
+lvl_askorun<-c("Mjög lítil / engin áskorun","Frekar lítil áskorun","Hvorki mikil né lítil áskorun","Frekar mikil áskorun","Mjög mikil áskorun","Veit ekki / vil ekki svara","")
+lvl_taekifaeri<-c("Mjög lítil / engin tækifæri","Frekar lítil tækifæri","Hvorki mikil né lítil tækifæri","Frekar mikil tækifæri","Mjög mikil tækifæri","Veit ekki / vil ekki svara","")
+lvl_sammala<-c("Mjög ósammála","Frekar ósammála","Hvorki sammála né ósammála","Frekar sammála","Mjög sammála","Veit ekki / vil ekki svara","")
+lvl_okostur<-c("Mjög lítill / enginn ókostur","Frekar lítill ókostur","Hvorki mikill né lítill ókostur","Frekar mikill ókostur","Mjög mikill ókostur","Veit ekki / vil ekki svara","")
+lvl_kostur<-c("Mjög lítill / enginn kostur","Frekar lítill kostur","Hvorki mikill né lítill kostur","Frekar mikill kostur","Mjög mikill kostur","Veit ekki, vil ekki svara","")
+
+for (i in 7:22) {
+dat[,i]<-factor(dat[,i], levels = lvl_askorun)
+}
+
+```
+
+
+# Inngangur
+
+## I. hluti: Áskoranir, tækifæri og áherslur
+
+### `r str_wrap(q_text[1,2],width=900)`
+\newpage
+
+
+
+```{r, echo=FALSE, eval=TRUE, results='asis'}
+
+for(i in 7:22){
+  plot_dat<-data.frame(q=dat[,i]) %>% count(q) %>% complete(q,fill = list(n=integer(1),freq=0)) %>% mutate(freq=n/sum(n))
+  plot_dat$freq_percent_lbl<-scales::percent(plot_dat$freq)
+  
+  my_plot<-ggplot(
+    data = plot_dat,
+    aes(x=q, y=freq, fill=q)
+  )+
+    geom_bar(stat = "identity")+
+    labs(title = str_wrap(q_item[i,4], width = 120) ,subtitle = "Áskoranir")+
+    theme_classic()+
+    theme(legend.position = "none")+
+    scale_x_discrete(labels=function(x) str_wrap(x,width = 15))+
+    scale_fill_brewer(palette = "YlGn")+
+    theme(axis.title.x=element_blank())+theme(axis.title.y=element_blank())+
+    scale_y_continuous(labels = scales::percent)
+  print(my_plot)
+  print(kable(plot_dat[-3]) %>% column_spec(2:3, bold = TRUE) ) 
+  cat("\n")
+}
+# kable(plot_dat, "pipe")
+remove(plot_dat, my_plot)
+  
+```
+
+
