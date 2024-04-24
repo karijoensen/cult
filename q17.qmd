@@ -6,13 +6,13 @@ format: pdf
 author: "Kári Joensen"
 ---
 
+suppressWarnings(
+library(wesanderson)
+)
 
 ```{r, echo=FALSE}
 suppressMessages(
 library(tidyverse))
-suppressWarnings(
-library(wesanderson)
-)
 library(knitr)
 suppressMessages(
 suppressWarnings(library(kableExtra))
@@ -34,7 +34,7 @@ lvl_askorun<-c("Mjög lítil / engin áskorun","Frekar lítil áskorun","Hvorki 
 lvl_taekifaeri<-c("Mjög lítil / engin tækifæri","Frekar lítil tækifæri","Hvorki mikil né lítil tækifæri","Frekar mikil tækifæri","Mjög mikil tækifæri","Veit ekki / vil ekki svara","")
 lvl_sammala<-c("Mjög ósammála","Frekar ósammála","Hvorki sammála né ósammála","Frekar sammála","Mjög sammála","Veit ekki / vil ekki svara","")
 lvl_okostur<-c("Mjög lítill / enginn ókostur","Frekar lítill ókostur","Hvorki mikill né lítill ókostur","Frekar mikill ókostur","Mjög mikill ókostur","Veit ekki / vil ekki svara","")
-lvl_kostur<-c("Mjög lítill / enginn kostur","Frekar lítill kostur","Hvorki mikill né lítill kostur","Frekar mikill kostur","Mjög mikill kostur","Veit ekki, vil ekki svara","")
+lvl_kostur<-c("Mjög lítill / enginn kostur","Frekar lítill kostur","Hvorki mikill né lítill kostur","Frekar mikill kostur","Mjög ill kostur","Veit ekki, vil ekki svara","")
 lvl_liklegt<-c("Mjög ólíklegt", "Frekar ólíklegt", "Hvorki líklegt né ólíklegt", "Frekar líklegt", "Mjög líklegt", "Veit ekki / vil ekki svara")
 
 for (i in 144:149) {
