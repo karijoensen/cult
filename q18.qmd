@@ -48,7 +48,7 @@ dat[,i]<-factor(dat[,i], levels = lvl_sammala)
 
 ## III. hluti: Umhverfismál, jafnrétti, inngilding og margbreytileiki
 
-### `r str_wrap(q_text[19,2],width=900)`
+### `r str_wrap(q_text[20,2],width=900)`
 \newpage
 
 

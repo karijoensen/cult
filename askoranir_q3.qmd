@@ -6,7 +6,6 @@ format: pdf
 author: "Kári Joensen"
 ---
 
-
 ```{r, echo=FALSE}
 suppressMessages(
 library(tidyverse))
@@ -43,15 +42,13 @@ dat[,i]<-factor(dat[,i], levels = lvl_askorun)
 
 ```
 
-
 # Inngangur
 
 ## I. hluti: Áskoranir, tækifæri og áherslur
 
 ### `r str_wrap(q_text[3,2],width=900)`
+
 \newpage
-
-
 
 ```{r, echo=FALSE, eval=TRUE, results='asis'}
 
@@ -67,16 +64,15 @@ for(i in 33:46){
     labs(title = str_wrap(q_item[i,4], width = 120) ,subtitle = "Áskoranir skipulagsheildar")+
     theme_classic()+
     theme(legend.position = "none")+
-    scale_x_discrete(labels=function(x) str_wrap(x,width = 15))+
+    scale_x_discrete(labels=function(x) str_wrap(x,width = 13))+
     scale_fill_brewer(palette = "YlOrBr")+
     theme(axis.title.x=element_blank())+theme(axis.title.y=element_blank())+
     scale_y_continuous(labels = scales::percent)
   print(my_plot)
+  cat("\n","\n","\n","\n")
   print(kable(plot_dat[-3]) %>% column_spec(2:3, bold = TRUE) ) 
   cat("\n")
 }
 remove(plot_dat, my_plot)
   
 ```
-
-
