@@ -65,7 +65,7 @@ dat[,i]<-factor(dat[,i], levels = lvl_sammala[1:5])
 
 for(i in 59:63){
   plot_dat<-data.frame(q=dat[,i]) %>% filter(!is.na(q)) %>% count(q) %>% complete(q,fill = list(n=integer(1),freq=0)) %>% mutate(freq=n/sum(n))
-  plot_dat$freq_percent_lbl<-scales::percent(plot_dat$freq)
+  plot_dat$freq_percent_lbl<-scales::percent(plot_dat$freq, accuracy = 0.1)
   
   my_plot<-ggplot(
     data = plot_dat,
